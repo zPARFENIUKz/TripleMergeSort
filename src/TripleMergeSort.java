@@ -22,7 +22,7 @@ public class TripleMergeSort {
         System.out.println(Arrays.equals(arr, arrClone));
     }
 
-    public static void tripleMergeSort(final int[] arr, int leftIndex, int rightIndex) throws NullPointerException, ArrayIndexOutOfBoundsException{
+    public static void tripleMergeSort(final int[] arr, final int leftIndex, final int rightIndex) throws NullPointerException, ArrayIndexOutOfBoundsException{
         if (arr == null) throw new NullPointerException("arr cannot be null");
         if (leftIndex < 0 || rightIndex >= arr.length) throw new ArrayIndexOutOfBoundsException("Incorrect indexes was passed");
         if (leftIndex < rightIndex) {
@@ -36,7 +36,7 @@ public class TripleMergeSort {
         }
     }
 
-    private static void tripleMerge(final int[] arr, int leftIndex, int midIndex_1, int midIndex_2, int rightIndex){
+    private static void tripleMerge(final int[] arr, final int leftIndex, final int midIndex_1, final int midIndex_2, final int rightIndex){
         final List<Integer> firstSubarray = Collections.unmodifiableList(Arrays.stream(Arrays.copyOfRange(arr, leftIndex, midIndex_1 + 1)).boxed().toList());
         final List<Integer> secondSubarray = Collections.unmodifiableList(Arrays.stream(Arrays.copyOfRange(arr, midIndex_1+1, midIndex_2+1)).boxed().toList());
         final List<Integer> thirdSubarray = Collections.unmodifiableList(Arrays.stream(Arrays.copyOfRange(arr, midIndex_2 + 1, rightIndex+1)).boxed().toList());
